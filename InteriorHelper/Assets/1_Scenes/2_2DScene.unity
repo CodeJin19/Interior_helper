@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 530303297}
   - component: {fileID: 530303296}
   - component: {fileID: 530303299}
+  - component: {fileID: 530303300}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -483,6 +484,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefabs: {fileID: 3307938913805631123, guid: 82bfef280c5eb474882ccce7c0187cae, type: 3}
+  floor: {fileID: 911797842}
+--- !u!114 &530303300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530303295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f3186fd434d8b428f2f43020214334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   floor: {fileID: 911797842}
 --- !u!1 &834249761
 GameObject:
@@ -690,7 +704,6 @@ GameObject:
   - component: {fileID: 911797843}
   - component: {fileID: 911797845}
   - component: {fileID: 911797844}
-  - component: {fileID: 911797846}
   m_Layer: 5
   m_Name: floor
   m_TagString: Untagged
@@ -753,18 +766,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911797842}
   m_CullTransparentMesh: 0
---- !u!114 &911797846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911797842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a1dbeae2354bbe4fa2715cdce475693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1187926630
 GameObject:
   m_ObjectHideFlags: 0
