@@ -18,6 +18,7 @@ public class ObjectCtrl : MonoBehaviour
         im = GetComponent<RawImage>();
         collision_count = 0;
         colli.size = new Vector2(rt.rect.width, rt.rect.height);
+        this.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
     }
 
     // Update is called once per frame

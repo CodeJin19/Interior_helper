@@ -27,7 +27,7 @@ public class ButtonCtrl : MonoBehaviour
     }
     public void newObject()
     {
-        RootPrefab.localScale = new Vector3(int.Parse(inputGaro.text), int.Parse(inputSero.text), int.Parse(inputNophi.text));
+        RootPrefab.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector3(int.Parse(inputGaro.text), int.Parse(inputSero.text), int.Parse(inputNophi.text));
         Instantiate(RootPrefab, new Vector3(0, 0, 0), Quaternion.identity).transform.SetParent(floor.transform);
     }   
     public void NextButtonClicked()
