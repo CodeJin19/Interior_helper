@@ -14,6 +14,10 @@ public class TitleCtrl : MonoBehaviour
     public InputField sero;
     public InputField nophi;
 
+    public static int width;
+    public static int breadth;
+    public static int height;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,9 +53,17 @@ public class TitleCtrl : MonoBehaviour
 
     public void NextButton()
     {
+        /*
         Debug.Log(garo.text);
         Debug.Log(sero.text);
         Debug.Log(nophi.text);
+        */
+
+        width = int.Parse(garo.text);
+        breadth = int.Parse(sero.text);
+        height = int.Parse(nophi.text);
+
+        SceneManager.LoadScene("2_2DScene");
     }
 
     public void CancelButton()
