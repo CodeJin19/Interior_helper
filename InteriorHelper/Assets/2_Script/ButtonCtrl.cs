@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class ButtonCtrl : MonoBehaviour
 {
-    private bool state = false;
-
-   
     public GameObject floor;
     public GameObject InputFieldPanel;
 
