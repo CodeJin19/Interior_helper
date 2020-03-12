@@ -5,10 +5,15 @@ using UnityEngine.UI;
 
 public class ObjectCtrl : MonoBehaviour
 {
-    BoxCollider2D colli; 
+    BoxCollider2D colli;
     RectTransform rt;
     RawImage im;
     int collision_count;
+    //GameObject _panel = GameObject.Find("Panel");
+    private float mousex;
+    private float mousey;
+    GameObject can;
+    private float temp;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +24,15 @@ public class ObjectCtrl : MonoBehaviour
         collision_count = 0;
         colli.size = new Vector2(rt.rect.width, rt.rect.height);
         this.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
+        can = GameObject.Find("Canvas");
+        temp = can.GetComponent<RectTransform>().position.x * 2 * 0.82f;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
 
     }
 
@@ -34,13 +43,20 @@ public class ObjectCtrl : MonoBehaviour
 
     public void OnTouchUp()
     {
-
+        if (mousex > temp)
+        {
+            this.transform.position = new Vector2(temp, mousey);
+        }
     }
 
     public void OnTouchDrag()
     {
         this.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        mousex = Input.mousePosition.x;
+        mousey = Input.mousePosition.y;
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -57,7 +73,8 @@ public class ObjectCtrl : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         collision_count--;
-        if (collision_count == 0) {
+        if (collision_count == 0)
+        {
             im.color = new Color32(0, 0, 0, 255);
         }
     }
