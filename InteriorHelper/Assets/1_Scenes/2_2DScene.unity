@@ -905,7 +905,7 @@ MonoBehaviour:
   inputGaro: {fileID: 1472779509}
   inputSero: {fileID: 801094629}
   inputNophi: {fileID: 1305023308}
-  RootPrefab: {fileID: 3307938913805631123, guid: 82bfef280c5eb474882ccce7c0187cae,
+  RootPrefab: {fileID: 9013082867227202971, guid: 8c59d19db604da447a00810e7fc345f0,
     type: 3}
 --- !u!114 &530303300
 MonoBehaviour:

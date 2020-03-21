@@ -15,6 +15,7 @@ public class ObjectCtrl : MonoBehaviour
     GameObject can;
     private float temp;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,17 +33,17 @@ public class ObjectCtrl : MonoBehaviour
     void Update()
     {
 
-
-
     }
 
     public void OnTouchDown()
     {
+        transform.GetChild(0).gameObject.GetComponent<removeCtrl>().isTouched = true;
         this.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
     }
 
     public void OnTouchUp()
     {
+        transform.GetChild(0).gameObject.GetComponent<removeCtrl>().isTouched = false;
         if (mousex > temp)
         {
             this.transform.position = new Vector2(temp, mousey);
@@ -57,14 +58,13 @@ public class ObjectCtrl : MonoBehaviour
     }
 
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         collision_count++;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.name != "floor")
+        if (collision.name != "floor" || collision.name != "RemoveCol")
         {
             im.color = new Color32(255, 0, 0, 255);
         }
