@@ -64,7 +64,7 @@ public class ObjectCtrl : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.name != "floor" || collision.name != "RemoveCol")
+        if (collision.name != "floor" && collision.name != "RemoveCol" && collision.name != "Remove")
         {
             im.color = new Color32(255, 0, 0, 255);
         }
@@ -73,7 +73,7 @@ public class ObjectCtrl : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         collision_count--;
-        if (collision_count == 0)
+        if (collision_count == 1)
         {
             im.color = new Color32(0, 0, 0, 255);
         }
