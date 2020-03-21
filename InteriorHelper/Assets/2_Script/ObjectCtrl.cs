@@ -14,7 +14,8 @@ public class ObjectCtrl : MonoBehaviour
     private float mousey;
     GameObject can;
     private float temp;
-
+    private Color32 origin;
+    private Color32 ColorRed = new Color32(255, 0, 0, 255);
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class ObjectCtrl : MonoBehaviour
         colli = GetComponent<BoxCollider2D>();
         rt = GetComponent<RectTransform>();
         im = GetComponent<RawImage>();
+        origin = im.color;
         collision_count = 0;
         colli.size = new Vector2(rt.rect.width, rt.rect.height);
         this.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
@@ -66,7 +68,7 @@ public class ObjectCtrl : MonoBehaviour
     {
         if (collision.name != "floor" && collision.name != "RemoveCol" && collision.name != "Remove")
         {
-            im.color = new Color32(255, 0, 0, 255);
+            im.color = ColorRed;
         }
     }
 
@@ -75,7 +77,7 @@ public class ObjectCtrl : MonoBehaviour
         collision_count--;
         if (collision_count == 1)
         {
-            im.color = new Color32(0, 0, 0, 255);
+            im.color = origin;
         }
     }
 }
