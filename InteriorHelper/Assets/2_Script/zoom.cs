@@ -9,9 +9,17 @@ public class zoom : MonoBehaviour
     public float orthoZoomSpeed = 0.05f;
     public GameObject temp;
 
+    private int count;
+
+    private void Start()
+    {
+        count = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.touchCount == 2)
         {
             Touch touchZero = Input.GetTouch(0);
@@ -20,8 +28,7 @@ public class zoom : MonoBehaviour
             Touch touchOne = Input.GetTouch(1);
             //Debug.Log(touchOne.position);
 
-            Debug.Log("double touched!!!");
-            /*
+            
             Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
             Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
 
@@ -36,7 +43,21 @@ public class zoom : MonoBehaviour
             //Debug.Log("aaa" + deltaMagnitudeDiff);
 
             temp.GetComponent<RectTransform>().localScale += new Vector3(deltaMagnitudeDiff * perspectiveZoomSpeed, deltaMagnitudeDiff * perspectiveZoomSpeed);
-            */
         }
+        */
+        if (count == 2)
+        {
+            Debug.Log("doubleTouched");
+        }
+    }
+    public void OnTouchDown()
+    {
+        count++;
+        Debug.Log(count);
+    }
+    public void OnTouchup()
+    {
+        count--;
+        Debug.Log(count);
     }
 }

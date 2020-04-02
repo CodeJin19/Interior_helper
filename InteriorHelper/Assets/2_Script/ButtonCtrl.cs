@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonCtrl : MonoBehaviour
 {
+    public GameObject _object;
     public GameObject floor;
     public GameObject InputFieldPanel;
 
@@ -21,7 +22,7 @@ public class ButtonCtrl : MonoBehaviour
     void CreateNewObject()
     {
         RootPrefab.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector3(int.Parse(inputGaro.text), int.Parse(inputSero.text), int.Parse(inputNophi.text));
-        Instantiate(RootPrefab, new Vector3(0, 0, 0), Quaternion.identity).transform.SetParent(floor.transform);
+        Instantiate(RootPrefab, new Vector3(100, 100, 0), Quaternion.identity).transform.SetParent(floor.transform);
     }   
     public void NextButtonClicked()
     {
@@ -31,7 +32,13 @@ public class ButtonCtrl : MonoBehaviour
         inputNophi.text = "";
         InputFieldPanel.SetActive(false);
     }
-
+    public void CancelButtonClicked()
+    {
+        inputGaro.text = "";
+        inputSero.text = "";
+        inputNophi.text = "";
+        InputFieldPanel.SetActive(false);
+    }
     public void NewPilarButtonClicked()
     {
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Pilar");
@@ -89,4 +96,18 @@ public class ButtonCtrl : MonoBehaviour
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Couch");
         InputFieldPanel.SetActive(true);
     }
+
+    public void PlusButtonClicked()
+    {
+        _object.GetComponent<RectTransform>().localScale *= 2;
+    }
+    public void MinusButtonClicked()
+    {
+        Vector3 temp = _object.GetComponent<RectTransform>().localScale;
+        if (temp.x > 0 && temp.y > 0)
+        {
+            _object.GetComponent<RectTransform>().localScale /= 2;
+        }
+    }
+     
 }
