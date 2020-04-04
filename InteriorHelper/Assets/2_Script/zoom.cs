@@ -5,57 +5,39 @@ using UnityEngine.UI;
 
 public class zoom : MonoBehaviour
 {
-    public float perspectiveZoomSpeed = 0.05f;
-    public float orthoZoomSpeed = 0.05f;
-    public GameObject temp;
-
-    private int count;
+    public GameObject floor;
+    Vector2 origin;
+    private Vector2 move;
+    float orix;
+    float oriy;
 
     private void Start()
     {
-        count = 0;
+        orix = floor.GetComponent<Transform>().position.x;
+        oriy = floor.GetComponent<Transform>().position.y;
+    }
+        
+    public void OnTouchDown()
+    {
+        origin = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnDrag()
     {
-        /*
         if (Input.touchCount == 2)
         {
             Touch touchZero = Input.GetTouch(0);
-            //Debug.Log(touchZero.position);
-
             Touch touchOne = Input.GetTouch(1);
-            //Debug.Log(touchOne.position);
 
-            
-            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+            move = (Vector2)(touchZero.position + touchOne.position)/2 - (Vector2)origin;
 
-            float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude * perspectiveZoomSpeed;
-            float touchDeltaMag = (touchZero.position - touchOne.position).magnitude * perspectiveZoomSpeed;
-
-            Debug.Log("aaa" + prevTouchDeltaMag);
-            Debug.Log("bbb" + touchDeltaMag);
-
-            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-            
-            //Debug.Log("aaa" + deltaMagnitudeDiff);
-
-            temp.GetComponent<RectTransform>().localScale += new Vector3(deltaMagnitudeDiff * perspectiveZoomSpeed, deltaMagnitudeDiff * perspectiveZoomSpeed);
         }
-        */
-        if (count == 2)
-        {
-            Debug.Log("doubleTouched");
-        }
+        floor.GetComponent<Transform>().position = new Vector3(move.x + orix, move.y + oriy, 0);
     }
 
-    public void OnTouchDown()
+    public void upp()
     {
-        if (Input.touchCount == 2)
-        {
-            Debug.Log("double touch!!");
-        }
+        orix = floor.GetComponent<Transform>().position.x;
+        oriy = floor.GetComponent<Transform>().position.y;
     }
 }
