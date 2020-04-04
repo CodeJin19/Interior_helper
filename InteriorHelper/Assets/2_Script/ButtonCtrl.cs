@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ButtonCtrl : MonoBehaviour
 {
-    public GameObject _object;
     public GameObject floor;
     public GameObject InputFieldPanel;
 
@@ -99,14 +98,14 @@ public class ButtonCtrl : MonoBehaviour
 
     public void PlusButtonClicked()
     {
-        _object.GetComponent<RectTransform>().localScale *= 2;
+        floor.GetComponent<RectTransform>().localScale *= 1.5f;
     }
     public void MinusButtonClicked()
     {
-        Vector3 temp = _object.GetComponent<RectTransform>().localScale;
+        Vector3 temp = floor.GetComponent<RectTransform>().localScale;
         if (temp.x > 0 && temp.y > 0)
         {
-            _object.GetComponent<RectTransform>().localScale /= 2;
+            floor.GetComponent<RectTransform>().localScale /= 1.5f;
         }
     }
      

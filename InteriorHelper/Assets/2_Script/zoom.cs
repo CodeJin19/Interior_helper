@@ -50,14 +50,12 @@ public class zoom : MonoBehaviour
             Debug.Log("doubleTouched");
         }
     }
+
     public void OnTouchDown()
     {
-        count++;
-        Debug.Log(count);
-    }
-    public void OnTouchup()
-    {
-        count--;
-        Debug.Log(count);
+        if (Input.touchCount == 2)
+        {
+            Debug.Log("double touch!!");
+        }
     }
 }
