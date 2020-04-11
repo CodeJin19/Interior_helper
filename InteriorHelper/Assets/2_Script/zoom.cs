@@ -30,9 +30,10 @@ public class zoom : MonoBehaviour
             Touch touchOne = Input.GetTouch(1);
 
             move = (Vector2)(touchZero.position + touchOne.position)/2 - (Vector2)origin;
+            floor.GetComponent<Transform>().position = new Vector3(move.x + orix, move.y + oriy, 0);
 
         }
-        floor.GetComponent<Transform>().position = new Vector3(move.x + orix, move.y + oriy, 0);
+        
     }
 
     public void upp()
