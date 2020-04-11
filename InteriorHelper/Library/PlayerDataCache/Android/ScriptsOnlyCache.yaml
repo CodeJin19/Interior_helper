@@ -5,10 +5,12 @@ ScriptsOnlyBuild:
     - FloorCtrl
     - ObjectCtrl
     - TitleCtrl
+    - quitapp
     - removeCtrl
     - zoom
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.EventTrigger
@@ -49,29 +51,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9674}
     - Class: 114
-      Script: {instanceID: 9822}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 9862}
+      Script: {instanceID: 9824}
     - Class: 114
-      Script: {instanceID: 10142}
+      Script: {instanceID: 9864}
     - Class: 114
-      Script: {instanceID: 10230}
+      Script: {instanceID: 10144}
     - Class: 114
-      Script: {instanceID: 10386}
+      Script: {instanceID: 10232}
     - Class: 114
-      Script: {instanceID: 10560}
+      Script: {instanceID: 10388}
     - Class: 114
-      Script: {instanceID: 10568}
+      Script: {instanceID: 10562}
     - Class: 114
-      Script: {instanceID: 10588}
+      Script: {instanceID: 10570}
     - Class: 114
-      Script: {instanceID: 10748}
+      Script: {instanceID: 10590}
     - Class: 114
-      Script: {instanceID: 11008}
+      Script: {instanceID: 10750}
     - Class: 114
-      Script: {instanceID: 11322}
+      Script: {instanceID: 11010}
     - Class: 114
-      Script: {instanceID: 11354}
+      Script: {instanceID: 11324}
+    - Class: 114
+      Script: {instanceID: 11356}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -112,33 +116,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9674}
     - Class: 114
-      Script: {instanceID: 9822}
+      Script: {instanceID: 9824}
     - Class: 114
-      Script: {instanceID: 9862}
+      Script: {instanceID: 9864}
     - Class: 114
-      Script: {instanceID: 10146}
+      Script: {instanceID: 10148}
     - Class: 114
-      Script: {instanceID: 10230}
+      Script: {instanceID: 10232}
     - Class: 114
-      Script: {instanceID: 10394}
+      Script: {instanceID: 10396}
     - Class: 114
-      Script: {instanceID: 10568}
+      Script: {instanceID: 10570}
     - Class: 114
-      Script: {instanceID: 10588}
+      Script: {instanceID: 10590}
     - Class: 114
-      Script: {instanceID: 10748}
+      Script: {instanceID: 10750}
     - Class: 114
-      Script: {instanceID: 11008}
+      Script: {instanceID: 11010}
     - Class: 114
-      Script: {instanceID: 11132}
+      Script: {instanceID: 11134}
     - Class: 114
-      Script: {instanceID: 11234}
+      Script: {instanceID: 11236}
     - Class: 114
-      Script: {instanceID: 11322}
+      Script: {instanceID: 11324}
     - Class: 114
-      Script: {instanceID: 11354}
+      Script: {instanceID: 11356}
     - Class: 114
-      Script: {instanceID: 11370}
+      Script: {instanceID: 11372}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -178,6 +182,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 776f5b1532333e08a02f0c255ee0de50
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: quitapp
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -390,7 +400,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 04cb0d48f68c21b57c2170d6c2d0e303
+      Hash: 6f2ff2ae7a1aabe1a64d2a128a00f3d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TitleCtrl
@@ -614,4 +624,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/1_Scenes/1_Title.unity
   - Assets/1_Scenes/2_2DScene.unity
-  playerPath: C:/Users/Public/Documents/aaa.apk
+  playerPath: "C:/Users/\uC774\uB450\uC601/Desktop/aaa.apk"

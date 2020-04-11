@@ -9,6 +9,7 @@ public class TitleCtrl : MonoBehaviour
 {
     public GameObject firstpanel;
     public GameObject floorpanel;
+    public GameObject quitpanel;
 
     public InputField garo;
     public InputField sero;
@@ -28,6 +29,10 @@ public class TitleCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            quitpanel.SetActive(true);
+        }
         
     }
 
