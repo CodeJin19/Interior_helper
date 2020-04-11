@@ -38,7 +38,10 @@ public class zoom : MonoBehaviour
 
     public void upp()
     {
-        orix = floor.GetComponent<Transform>().position.x;
-        oriy = floor.GetComponent<Transform>().position.y;
+        if (Input.touchCount == 1)
+        {
+            orix = floor.GetComponent<Transform>().position.x;
+            oriy = floor.GetComponent<Transform>().position.y;
+        }
     }
 }
