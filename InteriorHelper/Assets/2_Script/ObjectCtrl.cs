@@ -49,7 +49,45 @@ public class ObjectCtrl : MonoBehaviour
 
     public void OnTouchUp()
     {
-        transform.GetChild(0).gameObject.GetComponent<removeCtrl>().isTouched = false;
+        /*transform.GetChild(0).gameObject.GetComponent<removeCtrl>().isTouched = false;
+        if (mousex > temp)
+        {
+            this.transform.position = new Vector2(temp, mousey);
+        }*/
+        /*
+        if ((int)(Input.mousePosition.x - x) % 10 >= 5)
+        {
+            if ((int)(Input.mousePosition.y - y) % 10 >= 5)
+                //this.transform.position = new Vector2((int)(((Input.mousePosition.x - x) / 10) + 1) * 10, (int)(((Input.mousePosition.y - y) / 10) + 1) * 10);
+                this.GetComponent<RectTransform>().anchoredPosition = new Vector2((int)(((Input.mousePosition.x - x) / 10) + 2) * 5, (int)(((Input.mousePosition.y - y) / 10) + 2) * 5);
+            else
+                //this.transform.localPosition = new Vector2((int)(((Input.mousePosition.x - x) / 10) + 1) * 10, (int)((Input.mousePosition.y - y) / 10) * 10);
+                this.GetComponent<RectTransform>().anchoredPosition = new Vector2((int)(((Input.mousePosition.x - x) / 10) + 2) * 5, (int)((Input.mousePosition.y - y) / 10) * 5);
+        }
+        else
+        {
+            if ((int)(Input.mousePosition.y - y) % 10 >= 5)
+                //this.transform.localPosition = new Vector2((int)(((Input.mousePosition.x - x) / 10)) * 10, (int)(((Input.mousePosition.y - y) / 10) + 1) * 10);
+                this.GetComponent<RectTransform>().anchoredPosition = new Vector2((int)(((Input.mousePosition.x - x) / 10)) * 5, (int)(((Input.mousePosition.y - y) / 10) + 2) * 5);
+            else
+                //this.transform.localPosition = new Vector2((int)(((Input.mousePosition.x - x) / 10)) * 10, (int)((Input.mousePosition.y - y) / 10) * 10);
+                this.GetComponent<RectTransform>().anchoredPosition = new Vector2((int)(((Input.mousePosition.x - x) / 10)) * 5, (int)((Input.mousePosition.y - y) / 10) * 5);
+        }
+        */
+        if ((int)(this.transform.localPosition.x) % 10 >= 5)
+        {
+            if ((int)(this.transform.localPosition.y) % 10 >= 5)
+                this.transform.localPosition = new Vector2(((int)(this.transform.localPosition.x / 10) + 1) * 10, ((int)(this.transform.localPosition.y / 10) + 1) * 10);
+            else
+                this.transform.localPosition = new Vector2(((int)(this.transform.localPosition.x / 10) + 1) * 10, (int)(this.transform.localPosition.y / 10) * 10);
+        }
+        else
+        {
+            if ((int)(this.transform.localPosition.y) % 10 >= 5)
+                this.transform.localPosition = new Vector2((int)(this.transform.localPosition.x / 10) * 10, ((int)(this.transform.localPosition.y / 10) + 1) * 10);
+            else
+                this.transform.localPosition = new Vector2((int)(this.transform.localPosition.x / 10) * 10, (int)(this.transform.localPosition.y / 10) * 10);
+        }
         if (mousex > temp)
         {
             this.transform.position = new Vector2(temp, mousey);
