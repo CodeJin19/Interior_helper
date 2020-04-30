@@ -12,6 +12,8 @@ public class ObjectCtrl : MonoBehaviour
     //GameObject _panel = GameObject.Find("Panel");
     private float mousex;
     private float mousey;
+    GameObject EventSystem;
+
     GameObject can;
     private float temp;
     private Color32 origin;
@@ -29,6 +31,7 @@ public class ObjectCtrl : MonoBehaviour
         this.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
         can = GameObject.Find("Canvas");
         temp = can.GetComponent<RectTransform>().position.x * 2 * 0.82f;
+        EventSystem = GameObject.Find("EventSystem");
     }
 
     // Update is called once per frame
@@ -39,6 +42,7 @@ public class ObjectCtrl : MonoBehaviour
 
     public void OnTouchDown()
     {
+        EventSystem.GetComponent<ButtonCtrl>().rmtrigger = true;
         transform.GetChild(0).gameObject.GetComponent<removeCtrl>().isTouched = true;
         this.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
     }

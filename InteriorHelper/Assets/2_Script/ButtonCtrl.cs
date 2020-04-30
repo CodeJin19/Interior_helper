@@ -14,9 +14,12 @@ public class ButtonCtrl : MonoBehaviour
 
     private Transform RootPrefab;
 
+    public bool rmtrigger;
+
     void Start()
     {
         InputFieldPanel.SetActive(false);
+        rmtrigger = true;
     }
     void CreateNewObject()
     {

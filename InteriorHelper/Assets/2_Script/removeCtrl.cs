@@ -11,6 +11,8 @@ public class removeCtrl : MonoBehaviour
     GameObject can;
     private float temp;
     public bool isTouched;
+
+    GameObject EventSystem;
     public GameObject BOX;
 
     // Start is called before the first frame update
@@ -20,6 +22,7 @@ public class removeCtrl : MonoBehaviour
         rt = GetComponent<RectTransform>();
         this.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
         can = GameObject.Find("Canvas");
+        EventSystem = GameObject.Find("EventSystem");
         temp = can.GetComponent<RectTransform>().position.x * 2 * 0.82f;
     }
 
@@ -31,7 +34,7 @@ public class removeCtrl : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!isTouched && collision.name == "Remove")
+        if (!isTouched && EventSystem.GetComponent<ButtonCtrl>().rmtrigger && collision.name == "Remove")
         {
             Destroy(BOX);
         }

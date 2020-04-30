@@ -11,15 +11,19 @@ public class zoom : MonoBehaviour
     float orix;
     float oriy;
 
+    public GameObject EventSystem;
+
     private void Start()
     {
         orix = floor.GetComponent<Transform>().position.x;
         oriy = floor.GetComponent<Transform>().position.y;
+        EventSystem = GameObject.Find("EventSystem");
     }
         
     public void OnTouchDown()
     {
         origin = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        EventSystem.GetComponent<ButtonCtrl>().rmtrigger = false;
     }
 
     public void OnDrag()
