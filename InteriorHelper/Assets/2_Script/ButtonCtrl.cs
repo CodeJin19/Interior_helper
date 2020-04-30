@@ -7,6 +7,7 @@ public class ButtonCtrl : MonoBehaviour
 {
     public GameObject floor;
     public GameObject InputFieldPanel;
+    public GameObject Shadow;
 
     public InputField inputGaro;
     public InputField inputSero;
@@ -19,6 +20,7 @@ public class ButtonCtrl : MonoBehaviour
     void Start()
     {
         InputFieldPanel.SetActive(false);
+        Shadow.SetActive(false);
         rmtrigger = true;
     }
     void CreateNewObject()
@@ -33,6 +35,7 @@ public class ButtonCtrl : MonoBehaviour
         inputSero.text = "";
         inputNophi.text = "";
         InputFieldPanel.SetActive(false);
+        Shadow.SetActive(false);
     }
     public void CancelButtonClicked()
     {
@@ -40,63 +43,74 @@ public class ButtonCtrl : MonoBehaviour
         inputSero.text = "";
         inputNophi.text = "";
         InputFieldPanel.SetActive(false);
+        Shadow.SetActive(false);
     }
     public void NewPilarButtonClicked()
     {
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Pilar");
         InputFieldPanel.SetActive(true);
+        Shadow.SetActive(true);
     }
 
     public void NewDoorButtonClicked()
     {
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Door");
         InputFieldPanel.SetActive(true);
+        Shadow.SetActive(true);
     }
 
     public void NewWindowButtonClicked()
     {
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Window");
         InputFieldPanel.SetActive(true);
+        Shadow.SetActive(true);
     }
 
     public void NewClosetButtonClicked()
     {
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Closet");
         InputFieldPanel.SetActive(true);
+        Shadow.SetActive(true);
     }
 
     public void NewTableButtonClicked()
     {
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Table");
         InputFieldPanel.SetActive(true);
+        Shadow.SetActive(true);
     }
 
     public void NewDeskButtonClicked()
     {
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Desk");
         InputFieldPanel.SetActive(true);
+        Shadow.SetActive(true);
     }
     public void NewChairButtonClicked()
     {
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Chair");
         InputFieldPanel.SetActive(true);
+        Shadow.SetActive(true);
     }
     public void NewDrawerButtonClicked()
     {
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Drawer");
         InputFieldPanel.SetActive(true);
+        Shadow.SetActive(true);
     }
 
     public void NewBedButtonClicked()
     {
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Bed");
         InputFieldPanel.SetActive(true);
+        Shadow.SetActive(true);
     }
 
     public void NewCouchButtonClicked()
     {
         RootPrefab = Resources.Load<Transform>("2Dprefabs/Couch");
         InputFieldPanel.SetActive(true);
+        Shadow.SetActive(true);
     }
 
     public void PlusButtonClicked()
